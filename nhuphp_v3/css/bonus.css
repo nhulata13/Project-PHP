@@ -1,0 +1,218 @@
+
+/* Tiêu đề chính */
+.user h3 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 28px;
+    margin-top: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Thông tin chi tiết hóa đơn */
+.user p {
+    font-size: 16px;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: #ffffff;
+    border-left: 5px solid #F8694A;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+strong {
+    color: #F8694A;
+    font-weight: bold;
+}
+
+/* Tiêu đề của danh sách sản phẩm */
+h4 {
+    font-size: 18px;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Cải thiện giao diện bảng */
+.table {
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cải thiện tiêu đề bảng */
+.table thead {
+    background-color:#F8694A;
+    color: white;
+    font-weight: bold;
+}
+
+.table th, .table td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.table th {
+    text-transform: uppercase;
+}
+
+/* Tạo hiệu ứng hover cho các dòng trong bảng */
+.table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.table tr:hover {
+    background-color: #ecf0f1;
+}
+
+/* Trạng thái thông báo khi không có sản phẩm */
+td[colspan='5'] {
+    text-align: center;
+    font-size: 18px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Tạo một viền đẹp cho các thẻ thông báo lỗi */
+.error-message {
+    color: #e74c3c;
+    font-size: 16px;
+    background-color: #f8d7da;
+    border-left: 5px solid #e74c3c;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+			/* Modal background */
+.modal-overlay {
+    display: flex; /* Hiện ra mặc định nếu muốn test */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+/* Close button */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #F3312E;
+}
+
+/* Form title */
+.modal-content h3 {
+    text-align: center;
+    color: #F3312E;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Labels */
+.modal-content label {
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Inputs & textarea */
+.modal-content input[type="text"],
+.modal-content textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.2s;
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content textarea:focus {
+    border-color: #F3312E;
+}
+
+/* Submit button */
+.modal-content input[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #F3312E;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content input[type="submit"]:hover {
+    background-color: #d32623;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.status-pending {
+	color: #b91c1c;
+	background-color: #fee2e2;
+	padding: 4px 8px;
+	border-radius: 6px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.status-done {
+	color: #065f46;
+	background-color: #d1fae5;
+	padding: 4px 8px;
+	border-radius: 6px;
+	font-weight: bold;
+	display: inline-block;
+}

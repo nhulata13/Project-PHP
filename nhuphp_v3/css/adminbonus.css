@@ -1,0 +1,849 @@
+/* Cấu trúc chung của trang */
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    height: 100%;
+    overflow-x: hidden; /* Ngăn chặn cuộn ngang */
+}
+
+/* Phần section */
+.section {
+    display: flex;
+    padding: 0; /* Đảm bảo không có padding ngoài */
+}
+
+/* Container cho nội dung chính */
+.container {
+    max-width: 100%; /* Làm cho container chiếm toàn bộ chiều rộng màn hình */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+    height: 100%; /* Đảm bảo container chiếm toàn bộ chiều cao */
+}
+
+/* Navigation */
+#navigation {
+    width: 250px;  /* Độ rộng của navigation */
+    background-color: black;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Tạo bóng cho sidebar */
+    height: auto; /* Chiếm toàn bộ chiều cao */
+    position: sticky;
+    top: 0; /* Đảm bảo nó dính trên cùng */
+}
+
+.menu-nav-admin {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-nav-admin li {
+    margin-bottom: 15px;
+}
+
+.menu-nav-admin li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Định dạng phần lọc Authentication */
+.authentication-filter {
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+/* Thêm khoảng cách giữa các label */
+.authentication-filter label {
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+/* Định dạng các radio buttons */
+.authentication-filter input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Định dạng phần cho đẹp mắt */
+.authentication-filter label {
+    font-family: Arial, sans-serif;
+    color: #555;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Thêm hiệu ứng hover */
+.authentication-filter label:hover {
+    background-color: #ddd;
+}
+
+/* Main content area */
+#main {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Tăng bóng cho nội dung chính */
+    overflow-y: auto; /* Cuộn dọc khi nội dung vượt quá chiều cao */
+    border-radius: 10px; /* Bo góc cho khu vực chính */
+    width: 100%;
+}
+
+/* Bảng hiển thị thông tin */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Tạo bóng cho bảng */
+    border-radius: 8px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Định dạng header bảng */
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase; /* Viết hoa các chữ cái trong header */
+}
+/* 
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+} */
+
+tr:hover {
+    background-color: #f0f0f0; /* Hiệu ứng hover trên các dòng */
+}
+
+/* Định dạng form */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form select:focus {
+    border-color: #4CAF50; /* Hiệu ứng khi focus vào input */
+    outline: none;
+}
+
+/* Định dạng button */
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Tạo hiệu ứng phóng to */
+}
+
+form input[type="submit"]:active {
+    background-color: #388E3C;
+}
+
+/* Cảnh báo lỗi */
+#lblNULL {
+    color: #f44336;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Responsive: khi màn hình nhỏ */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column; /* Chuyển thành cột trên màn hình nhỏ */
+    }
+
+    #navigation {
+        width: 100%;
+        margin-bottom: 20px; /* Tạo khoảng cách dưới cho nav */
+    }
+
+    #main {
+        margin-top: 20px;
+        padding: 15px; /* Giảm padding cho màn hình nhỏ */
+    }
+
+    table {
+        font-size: 14px; /* Thu nhỏ kích thước chữ trong bảng */
+    }
+}
+
+@media (max-width: 992px) {
+    #navigation {
+        width: 200px; /* Rút gọn độ rộng của navigation trên màn hình vừa */
+    }
+
+    #main {
+        padding: 15px;
+    }
+}
+
+.container-admin {
+    width: 100%;
+}
+
+.container-admin .row-admin {
+    margin: 0;
+    width: 100%;
+}
+
+.container-admin #navigation .container {
+    background-color: transparent;
+}
+
+/* Hiệu ứng khi hover trên các item navigation */
+#navigation a:hover {
+    border-left: 1px solid white;
+    background-color: none;
+    border-radius: 0px;
+}
+
+/* Thêm hiệu ứng bóng đổ cho các thành phần */
+.container-admin .row-admin > div {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ cho các thành phần trong admin */
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/* Tối ưu trải nghiệm người dùng với chuyển động mượt mà */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Style for the form container */
+#editUser {
+    width: 50%; /* Reduced width */
+    max-width: 600px;
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Style for the labels inside the form */
+#editUser .text-uppercase {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+    width: 120px; /* Set a fixed width for the labels */
+    text-align: right; /* Align labels to the right */
+    display: inline-block; /* Ensure labels stay on the same line */
+}
+
+/* Style for the input fields */
+#editUser input[type="text"],
+#editUser select {
+    width: calc(100% - 140px); /* Make inputs take the remaining space after label */
+    padding: 8px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Add underline effect */
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px; /* Add space between fields */
+    margin-left: 10px; /* Add left margin to input fields */
+
+}
+
+/* Style for focused input fields */
+#editUser input[type="text"]:focus,
+#editUser select:focus {
+    border-bottom: 2px solid #4CAF50; /* Highlight the underline in green when focused */
+    outline: none;
+}
+
+/* Style for error messages */
+#editUser #lblNULL {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+#editUser input[type="submit"],
+#editUser input[type="reset"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 8px;
+    margin-top: 15px;
+}
+
+/* Hover effect for buttons */
+#editUser input[type="submit"]:hover,
+#editUser input[type="reset"]:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Active state for buttons */
+#editUser input[type="submit"]:active,
+#editUser input[type="reset"]:active {
+    background-color: #388E3C;
+}
+
+/* Style for the select dropdown */
+#editUser select {
+    background-color: #f9f9f9;
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #editUser {
+        width: 80%;
+        padding: 12px;
+    }
+
+    #editUser input[type="text"],
+    #editUser select {
+        width: calc(100% - 130px); /* Adjust width for smaller screen */
+    }
+
+    #editUser input[type="submit"],
+    #editUser input[type="reset"] {
+        padding: 6px 12px;
+    }
+}
+
+/* Tiêu đề section */
+.clearfix .section-title {
+    text-align: center;
+    margin-bottom: 6px; /* Giảm khoảng cách dưới */
+}
+
+.clearfix .section-title h3 {
+    font-size: 16px; /* Giảm kích thước chữ */
+    color: #333;
+    font-weight: bold;
+}
+
+/* Các nhóm form */
+.clearfix .form-group {
+    margin-bottom: 8px; /* Giảm khoảng cách dưới */
+}
+
+/* Inputs */
+.clearfix .input {
+    width: 100%;
+    padding: 6px; /* Giảm padding */
+    margin: 4px 0; /* Giảm khoảng cách */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Giảm border-radius */
+    font-size: 12px; /* Giảm kích thước chữ */
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.clearfix .input:focus {
+    outline: none;
+    border-color: #F8694A;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+/* Placeholder */
+.clearfix .input::placeholder {
+    color: #888;
+}
+
+/* Lỗi */
+.clearfix .error p {
+    font-size: 10px; /* Giảm kích thước chữ lỗi */
+    color: red;
+    font-style: italic;
+    display: none; /* Ẩn lỗi mặc định */
+}
+
+.clearfix .error p.display-error {
+    display: block; /* Hiển thị lỗi khi có */
+}
+
+/* Nút submit */
+.clearfix .primary-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px; /* Giảm padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px; /* Giảm kích thước chữ */
+    transition: all 0.3s ease;
+}
+
+.clearfix .primary-btn:hover {
+    background-color: #F8694A;
+}
+
+/* Nút reset */
+.clearfix input[type="reset"] {
+    background-color: #f44336;
+    color: white;
+    font-size: 12px; /* Giảm kích thước chữ */
+    padding: 6px 12px; /* Giảm padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clearfix input[type="reset"]:hover {
+    background-color: #d32f2f;
+}
+.billing-details {
+    background: none; /* Light warm beige background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: none; /* Soft shadow for depth */
+    width: 100%;
+    max-width: 500px; /* Set max-width */
+}
+
+
+/* daashboard */
+/* Daashboard */
+.admin-dashboard {
+    background-color: #ffffff; /* Màu nền trắng cho trang */
+    color: #333333; /* Màu chữ tối để dễ đọc */
+    padding: 0px 40px;
+    width: 100%;
+}
+
+.admin-dashboard h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 30px;
+    text-align: left; /* Tiêu đề sát trái */
+}
+
+.admin-dashboard .stats {
+    margin-bottom: 20PX;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.admin-dashboard .stat-item {
+    background-color: #f7f7f7; /* Màu nền sáng, gần như trắng */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng bóng đổ nhẹ */
+    width: calc(25% - 20px); /* Điều chỉnh chiều rộng khung */
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Hiệu ứng hover */
+    border-left: black 2px solid;
+}
+
+.admin-dashboard .stat-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    text-transform: uppercase;
+    width: 80%;
+;
+}
+
+.admin-dashboard .stat-item h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 15px;
+    text-align: left; /* Tiêu đề sát trái */
+    padding-bottom: 5px;
+    border-bottom: 1px dashed black;
+    line-height: 1.5;
+}
+
+.admin-dashboard .stat-item p {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+/* Thêm style cho span trong .stat-item */
+.admin-dashboard .stat-item span {
+    font-size: 14px; /* Kích thước chữ nhỏ */
+    font-weight: bold; /* Chữ đậm */
+    color: #28a745; /* Màu chữ xanh lá (active) */
+    padding: 5px 10px; /* Khoảng cách padding xung quanh chữ */
+    border-radius: 5px; /* Bo góc */
+    position: absolute; /* Đặt vị trí tuyệt đối để có thể di chuyển */
+    bottom: 10px; /* Đặt vị trí từ trên xuống */
+    right: 70px; /* Đặt vị trí từ phải sang */
+    text-transform: uppercase; /* Viết hoa chữ */
+}
+
+.admin-dashboard .icon {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 27px;
+    color: #b2b3b5; /* Màu icon sáng */
+    transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+.admin-dashboard .stat-item:hover {
+    background-color: #000; /* Nền đen khi hover */
+    color: #fff; /* Chữ trắng khi hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Tăng hiệu ứng bóng đổ */
+    transform: translateY(-5px); /* Hiệu ứng di chuyển nhẹ khi hover */
+}
+
+/* Chuyển màu trắng cho tất cả phần tử con bên trong khi hover */
+.admin-dashboard .stat-item:hover i,
+.admin-dashboard .stat-item:hover .stat-content h2,
+.admin-dashboard .stat-item:hover .stat-content p {
+    color: #b2b3b5; /* Tất cả các phần tử con đều chuyển màu trắng */
+
+}
+.admin-dashboard .stat-item:hover span {
+    color: red; /* Tất cả các phần tử con đều chuyển màu trắng */
+
+}
+.admin-dashboard .stat-item:hover .stat-content h2{
+    border-bottom: 1px dashed #b2b3b5;
+
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .stat-item {
+        width: calc(50% - 20px); /* Hai mục trên mỗi hàng */
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-item {
+        width: 100%; /* Một mục trên mỗi hàng */
+    }
+}
+/* Định dạng form chính */
+#addUserForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    max-width: 90%;
+    overflow-y: auto;
+    padding: 25px;
+    background-color: #ffffff; /* Màu nền trắng tinh */
+    border-radius: 15px; /* Bo tròn góc mượt mà hơn */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng mờ sâu hơn */
+    z-index: 1000;
+    width: 500px; /* Kích thước cố định */
+    font-family: Arial, sans-serif; /* Font hiện đại */
+}
+
+/* Thu nhỏ các ô input */
+#addUserForm .input {
+    width: 100%;
+    padding: 12px 15px; /* Cách đều trong input */
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bo góc input */
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng nhấn chìm */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hiệu ứng hover và focus cho input */
+#addUserForm .input:hover,
+#addUserForm .input:focus {
+    border-color: #F8694A; /* Màu viền xanh khi hover */
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.6); /* Hiệu ứng viền ánh sáng */
+    outline: none; /* Loại bỏ viền focus mặc định */
+}
+
+/* Đặt hai nút cạnh nhau */
+#addUserForm .form-group > .primary-btn.register {
+    display: inline-block;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 5px; /* Khoảng cách nút */
+    border-radius: 8px; /* Bo góc nút */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Tùy chỉnh màu sắc nút */
+#addUserForm .primary-btn.register {
+    background-color: #F8694A;
+    color: #fff;
+}
+
+#addUserForm .primary-btn.register:hover {
+    background-color: #F8694A;
+    transform: translateY(-2px); /* Hiệu ứng di chuyển nút khi hover */
+    box-shadow: 0px 4px 10px rgba(0, 91, 179, 0.6); /* Bóng khi hover */
+}
+
+/* Tùy chỉnh các thông báo lỗi */
+#addUserForm .error p {
+    margin: 5px 0; /* Khoảng cách giữa các thông báo lỗi */
+    font-size: 14px; /* Kích thước chữ lỗi */
+    color: #e74c3c; /* Màu đỏ nổi bật */
+    font-style: italic; /* In nghiêng */
+    display: none; /* Ẩn mặc định */
+}
+
+/* Tiêu đề chính */
+#addUserForm .section-title h3.title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Tùy chỉnh dropdown */
+#addUserForm select {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#addUserForm select:hover,
+#addUserForm select:focus {
+    border-color: #F8694A;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.6);
+    outline: none;
+}
+
+#addUserForm .close-btn {
+    color:white; /* White color for the X */
+    font-size: 2rem; /* Bigger font size */
+    border: none;
+    background: black;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Make it round */
+    float: right;
+    transition: background-color 0.3s ease; /* Smooth transition for background on hover */
+}
+
+/* Optional: Style when hovering over the close button */
+#addUserForm .close-btn:hover {
+    background-color: #dc3545; /* Red background when hovered */
+    color: black; /* Ensure the X stays white when hovered */
+}
+#addUserForm input[type="submit"] {
+    background-color: #F8694A;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+#addUserForm input[type="submit"]:hover {
+    background-color: #F8694A;
+}
+
+/* admin-filler */
+#filterForm {
+    position: absolute;
+    top: 50px; /* Loại bỏ căn giữa theo chiều dọc */
+    right: 305px; /* Loại bỏ căn giữa theo chiều ngang */
+    z-index: 1000; /* Đảm bảo form luôn nằm trên cùng */
+    width: 300px; /* Đặt chiều rộng hợp lý */
+    background-color: #f9f9f9; /* Màu nền sáng */
+    border: 1px solid #ddd; /* Viền nhẹ */
+    border-radius: 5px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Hiệu ứng mượt */
+}
+#store {
+    padding: 0px 30px;
+}
+#store img{
+width: 100%;
+height: 100%;}
+
+
+/* Thiết lập form căn giữa và tối ưu bố cục */
+#addProduct {
+    margin: 0 auto; /* Căn giữa form */
+    padding: 20px; /* Khoảng cách từ nội dung tới viền */
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+    border-radius: 8px; /* Bo góc form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho form */
+    width: 80%; /* Chiếm 80% chiều rộng, có thể điều chỉnh tùy theo nhu cầu */
+    max-width: 1000px; /* Đảm bảo form không quá rộng */
+}
+
+#addProduct .form-row {
+    display: flex; /* Đảm bảo các phần tử trong form-row xếp dọc */
+    margin-bottom: 20px; /* Khoảng cách giữa các form-row */
+    align-items: center;
+}
+
+#addProduct .form-row > span {
+    display: inline-block;
+    width: 20%; /* Đảm bảo nhãn chiếm toàn bộ chiều rộng */
+    text-transform: uppercase; /* Chuyển các nhãn thành chữ in hoa */
+    align-items: center; /* Căn giữa các input, select theo chiều dọc */
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+
+}
+
+#addProduct .form-row > div {
+    display: flex; /* Các input, select trong div căn chỉnh theo chiều ngang */
+    align-items: center; /* Căn giữa các input, select theo chiều dọc */
+}
+
+/* Điều chỉnh các input, select và file */
+#addProduct input[type="text"],
+#addProduct select,
+#addProduct input[type="file"] {
+    width: 50%; /* Đảm bảo các ô nhập liệu chiếm hết chiều rộng của container */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#addProduct input[type="file"] {
+    width: auto; /* Điều chỉnh chiều rộng của input file */
+    display: inline-block; /* Đảm bảo file input không chiếm hết chiều rộng */
+}
+
+/* Căn chỉnh cho các phần tử input và select khi focus */
+#addProduct input[type="text"]:focus,
+#addProduct select:focus,
+#addProduct input[type="file"]:focus {
+    border-color: #F8694A;
+    outline: none;
+}
+
+/* Nếu form có nhiều phần tử trên 2 cột */
+@media screen and (max-width: 768px) {
+    #addProduct .form-row > div {
+        flex-direction: column; /* Khi màn hình nhỏ, các phần tử trong div sẽ xếp theo chiều dọc */
+    }
+    #addProduct input[type="text"],
+    #addProduct select,
+    #addProduct input[type="file"] {
+        width: 100%; /* Các input, select sẽ chiếm 100% chiều rộng khi màn hình nhỏ */
+    }
+}
+
+
+/* Container for the form to make it more compact */
+#addProductType {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adds space between the fields */
+    justify-content: flex-start;
+}
+
+/* Style for form labels to align them horizontally */
+#addProductType span.text-uppercase {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Style for the input fields and select boxes */
+#addProductType input[type="text"], #addProductType select {
+    width: 250px; /* Set the width of the input fields */
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Align the validation message */
+#addProductType span {
+    display: inline-block;
+    font-size: 12px;
+}
+
+/* Optional: style for submit button */
+#addProductType input[type="submit"], #addProductType input[type="button"] {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Remove default margin of the form elements */
+#addProductType input[type="text"], #addProductType select {
+    margin-bottom: 10px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.status-pending {
+    background-color: red; /* Màu đỏ cho "Chưa xử lý" */
+}
+
+.status-completed {
+    background-color: green; /* Màu xanh lá cây cho "Đã xử lý" */
+}
