@@ -1,0 +1,122 @@
+select.input.aside-input {
+    width: 60%;
+}
+
+select.input.aside-sex-input {
+    width: 69%;
+}
+
+input.input.aside-input {
+    width: 41.5%;
+}
+
+select.input.aside-size-input {
+    width: 84%;
+}
+
+select.input.aside-type-input {
+    width: 83%;
+}
+
+button.primary-btn.aside-button {
+    width: 48.5%;
+}
+
+input.checkbox-aside {
+    margin-left: 10px;
+}
+
+select.input.aside-sort-by {
+    width: 25%;
+}
+
+select.input.aside-sort {
+    width: 45%;
+}
+
+button.primary-btn.sort-btn {
+    background: none;
+    padding: 0;
+}
+
+input.primary-btn.login {
+    width: 100%;
+}
+
+input.primary-btn.register {
+    width: 49.5%;
+}
+
+.edit-del {
+    width: 25%;
+    margin-right:20px;
+}
+
+/* Main Wrapper Styling */
+.form-wrapper {
+    display: flex;
+    justify-content: space-between; /* Giúp chia đều không gian giữa các phần */
+    align-items: flex-start;
+    gap: 30px; /* Thêm khoảng cách giữa các phần */
+    padding: 20px;
+}
+
+/* Form Styling */
+/* Wrapper for the login form */
+#login-form {
+    border-right: 2px solid #ccc; /* Thêm border phải */
+    padding-right: 20px; /* Khoảng cách bên phải */
+}
+
+.billing-details {
+    background: transparent; /* Light warm beige background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 100%;
+    max-width: 500px; /* Set max-width */
+}
+
+/* Registration Section */
+.registration-section {
+    background: #f9f1e3; /* Light cream background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Set max-width */
+}
+
+.registration-section h3 {
+    font-size: 22px;
+    color: #5c3c2f;
+    font-weight: bold;
+}
+
+.registration-section a {
+    background-color: #c95a44;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.registration-section a:hover {
+    background-color: #e26f4e; /* Lighter brown-red on hover */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .form-wrapper {
+        flex-direction: column; /* Chuyển sang bố cục dọc trên màn hình nhỏ */
+        align-items: center;
+    }
+
+    .billing-details, .registration-section {
+        width: 100%; /* Full width */
+        max-width: none; /* Remove max-width */
+        margin-bottom: 20px; /* Thêm khoảng cách giữa các phần */
+    }
+}
